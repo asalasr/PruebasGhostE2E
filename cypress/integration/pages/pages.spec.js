@@ -2,7 +2,7 @@ import { login,verifyAuthor,linkVerification,datePages,newPage,newPageTitle,veri
 context("Page Escenarios", () => {
   let title;
  
-  let author;
+  let author;//usuario de ghost
   let email = "af.baron10@uniandes.edu.co";
   let password = "contraseña";
 
@@ -10,7 +10,7 @@ context("Page Escenarios", () => {
   beforeEach(() => {
     //iniciar sesion
 
-    author="dsd"
+    author="dsd"//aca se debe indicar el nombre de usuario del perfil de ghost
     title= "Este es un test de crear una page"
     login(cy,email,password);
   });
