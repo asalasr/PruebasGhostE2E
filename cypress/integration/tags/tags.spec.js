@@ -1,10 +1,11 @@
 /// <reference types="cypress" />
 import { login,newTag,deleteTag,verifyTagEnableInPost,verifyTagEnableInPage,verifyTaginReaderWeb,wait,saveTag,irA,goPost,NewPage,selectTag } from "./listFuctionTags.js";
-context("Post Escenarios", () => {
+import {Email, Password, Url} from '../credencia'
+context("Tags Escenarios", () => {
   //datos acceso
-  let url = "http://localhost:2369/";
-  let email = "leo1_salas@hotmail.com";
-  let password = "Admin12345";
+  let url = Url+"/";
+  let email = Email;
+    let password = Password;
   //variables
   let title;
   let post;

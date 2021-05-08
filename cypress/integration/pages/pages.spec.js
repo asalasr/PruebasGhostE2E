@@ -1,10 +1,11 @@
 import { login,verifyAuthor,linkVerification,datePages,newPage,newPageTitle,verifyPageTitle,returnPageList, configurationPage,selectPage,deletePage,publishPage,verifyPageCreation,returnToPage, visitPages} from "./listFuction.js";
+import {Email, Password} from '../credencia'
 context("Page Escenarios", () => {
   let title;
  
   let author;//usuario de ghost
-  let email = "af.baron10@uniandes.edu.co";
-  let password = "contraseña";
+  let email = Email;
+    let password = Password;
 
   
   beforeEach(() => {

@@ -1,9 +1,11 @@
 /// <reference types="cypress" />
 import { login, goToGeneralPage, expandSiteTimeZoneOption, selectTimeZoneOption, verifyTimeZone, verifyPublicationLanguaje, expandSocialAccountOption, insertValueInLanguajeInput, insertValueInSocialAccountInput, verifySocialAccount, clicOnGeneraPageSaveButton, expandTitleAndDescriptionOption, insertValueInTitleInput, verifyTitleSite, expandPublicationLanguage, expandMetadata, insertValueInMetaTitle, insertValueInMetaDescription, verifyMetaDescription } from "./listFunction";
+import {Email, Password} from '../credencia'
+
 context("Configuración Escenarios", () => {
     let title;
-    let email = "js.segura@uniandes.edu.co";
-    let password = "M3iqQFS!e_PGFyD";
+    let email = Email;
+    let password = Password;
     const timeZone = '(GMT -4:00) Santiago';
     const bogotaTimeZone = '(GMT -5:00) Bogota, Lima, Quito';
     const socialAccountErrorMessage = "URL of your publication's Facebook Page";

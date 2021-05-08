@@ -1,9 +1,10 @@
 /// <reference types="cypress" />
 import { login, configPost,verifySlug,verifyUserListPost,verifyUrlPost,verifyPageOnePost,newPostPage,deletePost,retuntToPost, showPublishPost,verifyPostTitle,publicPost,newPostTitle,returnPostList,verifyPostTitleinWeb, selectPost } from "./listFuction.js";
+import {Email, Password} from '../credencia'
 context("Post Escenarios", () => {
   let title;
-  let email = "j.carvajalm@uniandes.edu.co";
-  let password = "mfYyHi8q.Mix@r#";
+  let email = Email;
+  let password = Password;
   
   beforeEach(() => {
     //iniciar sesion

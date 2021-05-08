@@ -1,5 +1,7 @@
+import {Url} from '../credencia'
+
 export function login(cy,email,password) {
-  cy.visit("http://localhost:2368/ghost/#/signin");
+  cy.visit(Url+"/ghost/#/signin");
   cy.get(".email").type(email);
   cy.get(".password").type(password);
   cy.get(".login").click();
@@ -38,7 +40,7 @@ export function publicPost(cy) {
 }
 
 export function verifyPostTitleinWeb(cy, title) {
-  cy.visit("http://localhost:2368/");
+  cy.visit(Url+"/");
   cy.get('h2[class="post-card-title"]').contains(title);
 }
 
@@ -61,7 +63,7 @@ export function verifySlug(cy){
   cy.get('#ember413').invoke('text').then((text) => {
     cy.get('button[class="close settings-menu-header-action"]').click({ force: true })
    publicPost(cy)
-   cy.visit("http://localhost:2368/"); 
+   cy.visit(Url+"/"); 
    cy.visit(text)
 });
 }

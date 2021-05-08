@@ -1,5 +1,7 @@
+import {Url} from '../credencia'
+
 export function login(cy,email,password) {
-    cy.visit("http://localhost:2368/ghost/#/signin");
+    cy.visit(Url+"/ghost/#/signin");
     cy.get(".email").type(email);
     cy.get(".password").type(password);
     cy.get(".login").click();
@@ -50,7 +52,7 @@ export function login(cy,email,password) {
   }
 
   export function visitPages(cy){
-    cy.visit("http://localhost:2368/ghost/#/pages");
+    cy.visit(Url+"/ghost/#/pages");
   }
   export function linkVerification(cy,title){
     cy.get('a[class="post-view-link"]').click({ force: true });
