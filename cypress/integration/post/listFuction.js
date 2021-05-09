@@ -41,7 +41,7 @@ export function publicPost(cy) {
 
 export function verifyPostTitleinWeb(cy, title) {
   cy.visit(Url+"/");
-  cy.get('.post-card-title').contains(title);
+  cy.get('h2[class="post-card-title"]').contains(title);
 }
 
 export function configPost(cy){
