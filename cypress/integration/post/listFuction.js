@@ -56,7 +56,7 @@ export function deletePost(cy){
 }
 
 export function retuntToPost(cy,title){
-  cy.get("h3").contains(title).click({ force: true });
+  cy.get(".gh-content-entry-title").contains(title).click({ force: true });
 }
 
 export function verifySlug(cy){
