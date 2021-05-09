@@ -19,7 +19,7 @@ export function login(cy,email,password) {
     cy.get('div[data-kg="editor"]').type(text);
   }
   export function returnPageList(cy) {
-    cy.get('a[href="#/pages/"]').contains("Page").click({ force: true });
+    cy.get('a[href="#/pages/"]').click({ force: true });
   }
   export function verifyPageTitle(cy, title) {
     cy.get("h3").contains(title);
@@ -29,22 +29,22 @@ export function login(cy,email,password) {
     cy.get("h3").contains(title).click({ force: true });
   }
   export function configurationPage(cy){
-    cy.get('button[class="gh-btn gh-btn-editor gh-btn-icon only-has-icon gh-actions-cog ml3"]').click({ force: true })
-
+     cy.get('button[class="post-settings"]').click({ force: true })
   }
 
   export function deletePage(cy){
       cy.get('button[class="gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button"]').click({ force: true })
       cy.wait(3000);
-      cy.get('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]').click({ force: true })
+      cy.get('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]').click({ force: true });
   }
 
   export function publishPage(cy){
     cy.get("span").contains("Publish").click({ force: true });
     cy.get("button > span").contains("Publish").click({ force: true });
+    
   }
   export function verifyPageCreation(cy, title) {
-    cy.get('div[class="gh-editor-post-status"]').contains("Published");
+    cy.get('div[class="gh-notification-content"]').contains("Published");
   }
 
   export function returnToPage(cy,title){
