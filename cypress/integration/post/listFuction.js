@@ -41,7 +41,7 @@ export function publicPost(cy) {
 
 export function verifyPostTitleinWeb(cy, title) {
   cy.visit(Url+"/");
-  cy.get('h2[class="post-card-title"]').contains(title);
+  cy.get('.post-card-title').contains(title);
 }
 
 export function configPost(cy){
@@ -69,13 +69,13 @@ export function verifySlug(cy){
 }
 
 export function  verifyPageOnePost(cy,title){
-  cy.get('h1[class="post-full-title"]').contains(title)
+  cy.get('.post-full-title').contains(title)
   
 }
 export function verifyUserListPost(cy, title){
-  cy.get('h2[class="post-card-title"]').contains(title).click({force:true});
-  cy.get('h4[class="author-name"]').click({force:true});
-  cy.get('h2[class="post-card-title"]').contains(title);
+  cy.get('.post-card-title').contains(title).click({force:true});
+  cy.get('.author-name').click({force:true});
+  cy.get('.post-card-title').contains(title);
   
   
 }
