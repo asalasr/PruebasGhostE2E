@@ -61,9 +61,9 @@ export function retuntToPost(cy,title){
 }
 
 export function verifySlug(cy){
-  cy.get('#ember413').invoke('text').then((text) => {
+  cy.get('.ghost-url-preview').invoke('text').then((text) => {
     cy.get('button[class="close settings-menu-header-action"]').click({ force: true })
-   publicPost(cy)
+  
    cy.visit(Url+"/"); 
    cy.visit(text)
 });

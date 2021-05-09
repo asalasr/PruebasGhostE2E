@@ -24,7 +24,7 @@ context("Post Escenarios", () => {
     verifyPostTitle(cy, title)
     
   });
-it("Escenario 2 eliminar un post ", () => {
+it("Escenario 2 eliminar un post de borradores", () => {
      
     //seleccionar el post
    selectPost(cy,title);
@@ -44,7 +44,7 @@ it("Escenario 2 eliminar un post ", () => {
     returnPostList(cy)
     //seleccionar el post creado
     retuntToPost(cy,title);
-    //escribir el titulo
+    //publicar el post
     publicPost(cy);
    //verificar post en web page
     verifyPostTitleinWeb(cy, title)
@@ -52,32 +52,27 @@ it("Escenario 2 eliminar un post ", () => {
   });
 
   it("Escenario 4 verificar generar slug", () => {
-    //ir a la pagina de crear new Post
-   newPostPage(cy);
-   //escribir el titulo
-   newPostTitle(cy,title);
-   //volver a lista de post
-   returnPostList(cy)
-   //seleccionar el post creado
-   retuntToPost(cy,title);
-   //escribir el titulo
+    //ir a un post publicado 
+    goToPostPublished(cy, title)
+   //ir a configuraciones
    configPost(cy);
-  //verificar post en web page
+  //verificar y extraer la ruta asignada al post
    verifySlug(cy)
-
+    //verificar titulo del post en la web page
    verifyPageOnePost(cy,title)
    
  });
 
  it("Escenario 5 verificar el post publicado pertenece al usuario", () => {
-  //ir a la pagina de crear new Post
+  //ir a la pagina principal de post publicados
  verifyPostTitleinWeb(cy, title)
+ //verificar que el usuario cuenta con el post en sus publicaciones
  verifyUserListPost(cy, title)
  
 });
 
 it("Escenario 6 Eliminar un post publicado", () => {
-  //ir a la pagina de crear new Post
+  //ir a un post publicado
  goToPostPublished(cy, title)
  //ir a configuraciones del post
  configPost(cy);
