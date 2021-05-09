@@ -27,11 +27,11 @@ export function returnPostList(cy) {
 
 export function selectPost(cy, title) {
   cy.get('a[href="#/posts/"]').click({ force: true });
-  cy.get("h3").contains(title).click({ force: true });
+  cy.get(".gh-content-entry-title").contains(title).click({ force: true });
 }
 
 export function verifyPostTitle(cy, title) {
-  cy.get("h3").contains(title);
+  cy.get(".gh-content-entry-title").contains(title);
 }
 
 export function publicPost(cy) {
@@ -41,7 +41,7 @@ export function publicPost(cy) {
 
 export function verifyPostTitleinWeb(cy, title) {
   cy.visit(Url+"/");
-  cy.get('h2[class="post-card-title"]').contains(title);
+  cy.get('.post-card-title').contains(title);
 }
 
 export function configPost(cy){
@@ -51,7 +51,8 @@ export function configPost(cy){
 
 export function deletePost(cy){
   cy.get('button[class="gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button"]').click({ force: true })
-  cy.get('#ember391').click({ force: true })
+  cy.wait(3000);
+  cy.get('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]').click({ force: true });
 
 }
 
@@ -69,13 +70,19 @@ export function verifySlug(cy){
 }
 
 export function  verifyPageOnePost(cy,title){
-  cy.get('.post-full-title').contains(title)
+  cy.get('h1[class="post-full-title"]').contains(title)
   
 }
 export function verifyUserListPost(cy, title){
-  cy.get('.post-card-title').contains(title).click({force:true});
-  cy.get('.author-name').click({force:true});
-  cy.get('.post-card-title').contains(title);
+  cy.get('h2[class="post-card-title"]').contains(title).click({force:true});
+  cy.get('h4[class="author-name"]').click({force:true});
+  cy.get('h2[class="post-card-title"]').contains(title);
   
   
+}
+
+export function goToPostPublished(cy, title){
+  cy.visit(Url+'/ghost/#/posts?type=published')
+  cy.get(".gh-content-entry-title").contains(title).click({ force: true });
+
 }

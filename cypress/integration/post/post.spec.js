@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { login, configPost,verifySlug,verifyUserListPost,verifyUrlPost,verifyPageOnePost,newPostPage,deletePost,retuntToPost, showPublishPost,verifyPostTitle,publicPost,newPostTitle,returnPostList,verifyPostTitleinWeb, selectPost } from "./listFuction.js";
+import { login, goToPostPublished,configPost,verifySlug,verifyUserListPost,verifyUrlPost,verifyPageOnePost,newPostPage,deletePost,retuntToPost, showPublishPost,verifyPostTitle,publicPost,newPostTitle,returnPostList,verifyPostTitleinWeb, selectPost } from "./listFuction.js";
 import {Email, Password} from '../credencia'
 context("Post Escenarios", () => {
   let title;
@@ -8,7 +8,7 @@ context("Post Escenarios", () => {
   
   beforeEach(() => {
     //iniciar sesion
-    title= "lapruebaCon4"
+    title= "lapruebae3243"
     login(cy,email,password);
   });
 
@@ -73,6 +73,16 @@ it("Escenario 2 eliminar un post ", () => {
   //ir a la pagina de crear new Post
  verifyPostTitleinWeb(cy, title)
  verifyUserListPost(cy, title)
+ 
+});
+
+it("Escenario 6 Eliminar un post publicado", () => {
+  //ir a la pagina de crear new Post
+ goToPostPublished(cy, title)
+ //ir a configuraciones del post
+ configPost(cy);
+ //eliminar el post
+  deletePost(cy)
  
 });
 
