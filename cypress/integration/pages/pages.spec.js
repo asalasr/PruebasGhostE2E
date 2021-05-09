@@ -1,9 +1,9 @@
 import { login,verifyAuthor,linkVerification,datePages,newPage,newPageTitle,verifyPageTitle,returnPageList, configurationPage,selectPage,deletePage,publishPage,verifyPageCreation,returnToPage, visitPages} from "./listFuction.js";
-import {Email, Password} from '../credencia'
+import {Email, Password, User} from '../credencia'
 context("Page Escenarios", () => {
   let title;
  
-  let author;//usuario de ghost
+  let author=User;   //aca se debe indicar el nombre de usuario del perfil de ghost
   let email = Email;
     let password = Password;
 
@@ -11,7 +11,7 @@ context("Page Escenarios", () => {
   beforeEach(() => {
     //iniciar sesion
 
-    author="dsd"//aca se debe indicar el nombre de usuario del perfil de ghost
+
     title= "Este es un test de crear una page"
     login(cy,email,password);
   });
