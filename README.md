@@ -20,6 +20,7 @@ Entrega de Pruebas E2E andes
         export const User= "Johan"
 
 
+* __Nota__: El parametro __User__ es el username asignado por Ghost al momento de crear el usuario de login.
 ## Ejecutar
 Abra el la carpeta cypress raíz de este proyecto con la herramienta cypress, presione Run integration spect que aparece en la pantalla y listo. todos los espect correrán de forma automática.
 
