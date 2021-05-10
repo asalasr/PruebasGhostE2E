@@ -22,7 +22,8 @@ context("Tags Escenarios", () => {
     	login(cy,url,email,password);
   });
   
-  it("Escenario 1 Crear un tag", () => {
+  it("Given: Estando loggeado exitosamente en la aplicación. WHEN: proceso al listado d tags. " +
+        "THEN: creo un nuevo tag.", () => {
   		//crear nuevo tag
     	newTag(cy,url,title);
     	//espera
@@ -33,7 +34,8 @@ context("Tags Escenarios", () => {
     	irA(cy,url,"ghost/#/tags");
   });
   
-  it("Escenario 2 Verificar tag habilitado en un Post ", () => {
+  it("Given: Estando loggeado exitosamente en la aplicación. WHEN: proceso a un post. " +
+        "THEN: se valida que el tag este habilitado.", () => {
   		//ir a un Post
      	goPost(cy,post,title);
      	//espera
@@ -42,7 +44,8 @@ context("Tags Escenarios", () => {
 		verifyTagEnableInPost(cy,post,title);
   });
 
-  it("Escenario 3 Verificar tag habilitado en un Page", () => {
+  it("Given: Estando loggeado exitosamente en la aplicación. WHEN: proceso a una Page. " +
+        "THEN: se valida que el tag este habilitado.", () => {
 	    //nueva Page
 		NewPage(cy,url,page,title);
 		//espera
@@ -53,7 +56,8 @@ context("Tags Escenarios", () => {
 		verifyTagEnableInPage(cy,url,page,title);
   });
 
-  it("Escenario 4 Eliminar un Tag", () => {
+  it("Given: Estando loggeado exitosamente en la aplicación. WHEN: proceso al listado de tags. " +
+        "THEN: se selecciona el tag y se elimina.", () => {
   		//seleccionar un tag
         selectTag(cy,title);
         //espera
@@ -62,7 +66,8 @@ context("Tags Escenarios", () => {
 		deleteTag(cy,title);
  });
 
- it("Escenario 5 Verificar en Tag en el sitio web de lector", () => {
+ it("Given: Se ingresa al web de lectura. WHEN: se busca el post con el tag asociado" +
+        "THEN: verificado el tag se selecciona", () => {
 		//redireccionar
     	irA(cy,url,post);
     	//espera
