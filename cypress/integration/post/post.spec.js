@@ -7,76 +7,92 @@ context("Post Escenarios", () => {
   let password = Password;
   
   beforeEach(() => {
-    //iniciar sesion
+    //Given: Estando logeados en la aplicacion
     title= "lapruebae3243"
     login(cy,email,password);
   });
 
-  it("Escenario 1 crear un post como borrador con titulo", () => {
+  it("Given: Estando loggeado exitosamente en la aplicación."+ 
+  "WHEN ir a la pagina de crear new Post" +
+  "WHEN escribir el titulo" +
+  "WHEN volver a lista de post" +
+  "THEN: verificar post en lista de post.", () => {
      
-    //ir a la pagina de crear new Post
+    //WHEN ir a la pagina de crear new Post
     newPostPage(cy);
-    //escribir el titulo
+    //WHEN escribir el titulo
     newPostTitle(cy,title);
-    //volver a lista de post
+    //WHEN volver a lista de post
     returnPostList(cy)
-    //verificar post en lista de post
+    //THEN verificar post en lista de post
     verifyPostTitle(cy, title)
     
   });
-it("Escenario 2 eliminar un post de borradores", () => {
+it("Given: Estando loggeado exitosamente en la aplicación."+ 
+"WHEN seleccionar el post" +
+"WHEN ir a configuraciones del post" +
+"THEN: eliminar el post.", () => {
      
-    //seleccionar el post
+    //WHEN seleccionar el post
    selectPost(cy,title);
-    //ir a configuraciones del post
+    // WHEN ir a configuraciones del post
     configPost(cy);
-   //eliminar el post
+   //THEN eliminar el post
     deletePost(cy)
     
   });
 
-  it("Escenario 3 publicar un post y verificarlo en la pagina", () => {
-     //ir a la pagina de crear new Post
+  it("Given: Estando loggeado exitosamente en la aplicación."+
+      "WHEN crear un nuevo Post" +
+      "WHEN publicarlo" +
+      "THEN: verificar el post en la web page.", () => {
+     //WHEN ir a la pagina de crear new Post
     newPostPage(cy);
-    //escribir el titulo
+    //WHEN escribir el titulo
     newPostTitle(cy,title);
-    //volver a lista de post
+    //WHEN volver a lista de post
     returnPostList(cy)
-    //seleccionar el post creado
+    //WHEN seleccionar el post creado
     retuntToPost(cy,title);
-    //publicar el post
+    //WHEN publicar el post
     publicPost(cy);
-   //verificar post en web page
+   // THEN verificar post en web page
     verifyPostTitleinWeb(cy, title)
     
   });
 
-  it("Escenario 4 verificar generar slug", () => {
-    //ir a un post publicado 
+  it("Given: Estando loggeado exitosamente en la aplicación."+
+  "WHEN ir a un post publicado y verificar el slug" +
+  "THEN el post esta publicado en esa ruta", () => {
+    //WHEN ir a un post publicado 
     goToPostPublished(cy, title)
-   //ir a configuraciones
+   //WHEN ir a configuraciones
    configPost(cy);
-  //verificar y extraer la ruta asignada al post
+  //WHEN verificar y extraer la ruta asignada al post
    verifySlug(cy)
-    //verificar titulo del post en la web page
+    //THEN verificar titulo del post en la web page
    verifyPageOnePost(cy,title)
    
  });
 
- it("Escenario 5 verificar el post publicado pertenece al usuario", () => {
-  //ir a la pagina principal de post publicados
+ it("Given: Estando loggeado exitosamente en la aplicación."+
+ "WHEN ir a la pagina principal de post publicados" +
+ "THEN verificar que el usuario cuenta con el post en sus publicaciones", () => {
+  // WHEN ir a la pagina principal de post publicados
  verifyPostTitleinWeb(cy, title)
- //verificar que el usuario cuenta con el post en sus publicaciones
+ //THEN verificar que el usuario cuenta con el post en sus publicaciones
  verifyUserListPost(cy, title)
  
 });
 
-it("Escenario 6 Eliminar un post publicado", () => {
-  //ir a un post publicado
+it("Given: Estando loggeado exitosamente en la aplicación."+
+"WHEN ir a un post publicado" +
+"THEN eliminar el post", () => {
+  //WHEN ir a un post publicado
  goToPostPublished(cy, title)
- //ir a configuraciones del post
+ //WHEN ir a configuraciones del post
  configPost(cy);
- //eliminar el post
+ //THEN eliminar el post
   deletePost(cy)
  
 });
