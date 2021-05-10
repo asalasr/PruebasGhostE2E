@@ -1,3 +1,8 @@
+# Introduccion:
+Este proyecto de caracter educativo aplica pruebas E2E sobre un aplicativo web, las cuales validaron los escenarios tanto en Kraken, como en Cypress:
+1. El proyecto y analisis de Cypress se encuentra en este repositorio. 
+2. El analisis en Kraken se encuentra en el repositorio: https://github.com/johanCarvajalAndes/pruebasKrakenAndes/blob/main/README.md
+
 # PruebasGhostE2E
 Entrega de Pruebas E2E andes
 
