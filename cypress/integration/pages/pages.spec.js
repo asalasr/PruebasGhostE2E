@@ -15,7 +15,8 @@ context("Page Escenarios", () => {
     title= "Este es un test de crear una page"
     login(cy,email,password);
   });
-  it("Escenario 1 Verificar el borrador de una pagina", () => {
+  it("Given: Estando loggeado exitosamente en la aplicacion. WHEN: proceso a la seccion de pages. " +
+        "THEN: creo una nueva Page borrador.", () => {
      
     //ir a la pagina de crear una nueva pagina
     newPage(cy);
@@ -27,7 +28,9 @@ context("Page Escenarios", () => {
     verifyPageTitle(cy,title);
     
   });
-  it("Escenario 2 eliminar una pagina ", () => {
+  it("Given: Estando loggeado exitosamente en la aplicacion. WHEN: proceso a la seccion de pages. " +
+        "THEN: selecciono la page"+
+        "THEN: se elimina por configuracion", () => {
      
     //seleccionar el post
     selectPage(cy,title);
@@ -37,7 +40,10 @@ context("Page Escenarios", () => {
     deletePage(cy)
     
   });
-  it("Escenario 3 Publicar un pagina", () => {
+  it("Given: Estando loggeado exitosamente en la aplicacion. WHEN: proceso a la seccion de pages. " +
+        "THEN: selecciono la page"+
+        "THEN: se publica la page"+
+        "THEN: se verifica la creacion", () => {
     //ir a la pagina de crear new Post
    newPage(cy);
    //escribir el titulo
@@ -56,7 +62,10 @@ context("Page Escenarios", () => {
    verifyPageCreation(cy, title)
  });
  
- it("Escenario 4 Verificar el autor que creo la pagina", () => {
+ it("Given: Estando loggeado exitosamente en la aplicacion. WHEN: proceso a la seccion de pages. " +
+        "THEN: selecciono la page"+
+        "THEN: se ingresa a configuracion"+
+        "THEN: se verifica el autor", () => {
   //ir a la pagina de crear new Post
   visitPages(cy);
   //ingresar a la pagina en cuestión
@@ -67,7 +76,10 @@ context("Page Escenarios", () => {
   verifyAuthor(cy, author);
  
 });
-it("Escenario 5 Validar la existencia del link de una pagina luego de creada", () => {
+it("Given: Estando loggeado exitosamente en la aplicacion. WHEN: proceso a la seccion de pages. " +
+        "THEN: selecciono la page"+
+        "THEN: se ingresa a configuracion"+
+        "THEN: se verifica el link de acceso", () => {
   //ir a la pagina de crear new Post
   visitPages(cy);
   //ingresar a la pagina en cuestión
