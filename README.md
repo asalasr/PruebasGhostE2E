@@ -24,6 +24,8 @@ Entrega de Pruebas E2E andes
 ## Ejecutar
 Abra el la carpeta cypress raíz de este proyecto con la herramienta cypress, presione Run integration spect que aparece en la pantalla y listo. todos los espect correrán de forma automática.
 
+## Tabla de funcionalidades y Escenarios:
+
 
 | Funcionalidades | Escenarios | Descripción 	 |
 |-------------------------|---------------------------|---------------------------|
