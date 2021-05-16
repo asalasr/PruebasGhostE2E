@@ -8,7 +8,7 @@ context("Post Escenarios", () => {
   let escenario = "NO"
   beforeEach(() => {
     //Given: Estando logeados en la aplicacion
-    title= "lapruebaReina"
+    title= "lapruebaRegresion"
     login(cy,email,password);
   });
 
