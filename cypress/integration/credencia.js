@@ -1,4 +1,4 @@
 export const Email = "j.carvajalm@uniandes.edu.co"
-export const Password = "mfYyHi8q.Mix@r#"
-export const Url = "http://localhost:2368"
+export const Password = "SDXzE_iif*2sT7D"//jQ6KHZdu5wf!Fd!//SDXzE_iif*2sT7D#
+export const Url = "http://localhost:2370"
 export const User= "Johan Fernando Carvajal Marín"
